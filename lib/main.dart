@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:getyourchildren/cubit/cubit.dart';
 import 'package:getyourchildren/cubit/states.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'Bloc_Observer.dart';
 import 'Home/home_screen.dart';
 
@@ -11,6 +12,7 @@ void main() {
   BlocOverrides.runZoned(
         () async {
       WidgetsFlutterBinding.ensureInitialized();
+      MobileAds.instance.initialize();
       runApp(MyApp());
     },
     blocObserver: MyBlocObserver(),
